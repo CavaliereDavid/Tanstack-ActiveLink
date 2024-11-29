@@ -1,12 +1,9 @@
-import { Layout } from "antd";
 import { ActiveLink } from "./ActiveLink";
 import { FakeIcon } from "./Icons";
 
-const { Header } = Layout;
-
-const NavHeader = () => {
+const HeaderNav = () => {
   return (
-    <Header
+    <nav
       style={{
         position: "sticky",
         top: 0,
@@ -15,7 +12,6 @@ const NavHeader = () => {
         height: "100px",
         display: "flex",
         alignItems: "center",
-        backgroundColor: "#fff",
         padding: "0 20px",
       }}
     >
@@ -98,8 +94,8 @@ const NavHeader = () => {
       >
         <h1>Spare</h1>
       </ActiveLink>
-    </Header>
+    </nav>
   );
 };
 
-export default NavHeader;
+export default HeaderNav;

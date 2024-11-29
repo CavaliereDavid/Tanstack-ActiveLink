@@ -1,5 +1,5 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
-import NavHeader from "../HeaderNav";
+import HeaderNav from "../HeaderNav";
 
 export const Route = createLazyFileRoute("/")({
   component: Index,
@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute("/")({
 function Index() {
   return (
     <>
-      <NavHeader />
+      <HeaderNav />
     </>
   );
 }

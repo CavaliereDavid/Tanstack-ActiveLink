@@ -1,16 +1,16 @@
-import { createLazyFileRoute } from '@tanstack/react-router'
-import NavHeader from '../HeaderNav'
+import { createLazyFileRoute } from "@tanstack/react-router";
+import HeaderNav from "../HeaderNav";
 
-export const Route = createLazyFileRoute('/contratti')({
+export const Route = createLazyFileRoute("/contratti")({
   component: Contract,
-})
+});
 
 function Contract() {
   return (
     <>
-      <NavHeader />
+      <HeaderNav />
     </>
-  )
+  );
 }
 
-export default Contract
+export default Contract;

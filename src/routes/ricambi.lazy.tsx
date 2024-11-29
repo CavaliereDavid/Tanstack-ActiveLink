@@ -1,16 +1,16 @@
-import { createLazyFileRoute } from '@tanstack/react-router'
-import NavHeader from '../HeaderNav'
+import { createLazyFileRoute } from "@tanstack/react-router";
+import HeaderNav from "../HeaderNav";
 
-export const Route = createLazyFileRoute('/ricambi')({
+export const Route = createLazyFileRoute("/ricambi")({
   component: Spare,
-})
+});
 
 function Spare() {
   return (
     <>
-      <NavHeader />
+      <HeaderNav />
     </>
-  )
+  );
 }
 
-export default Spare
+export default Spare;
