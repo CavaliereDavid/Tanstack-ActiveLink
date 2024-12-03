@@ -9,11 +9,13 @@ type ActiveLinkOptions = LinkProps & {
   inactiveProps?:
     | React.AnchorHTMLAttributes<HTMLAnchorElement>
     | (() => React.AnchorHTMLAttributes<HTMLAnchorElement>);
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 };
 
 export const ActiveLink: React.FC<ActiveLinkOptions> = ({
   activeProps,
   inactiveProps,
+  onClick,
   ...props
 }) => {
   const location = useLocation();
@@ -27,5 +29,13 @@ export const ActiveLink: React.FC<ActiveLinkOptions> = ({
       ? inactiveProps()
       : inactiveProps;
 
-  return <Link {...props} {...appliedProps} />;
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    console.log("Clicked URL:", props.to);
+    console.log("Current location:", location.pathname);
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
+  return <Link {...props} {...appliedProps} onClick={handleClick} />;
 };

@@ -1,7 +1,17 @@
+import { useLocation } from "@tanstack/react-router";
 import { ActiveLink } from "./ActiveLink";
 import { FakeIcon } from "./Icons";
 
 const HeaderNav = () => {
+  const location = useLocation();
+  console.log("HeaderNav rendered, current location:", location.pathname);
+
+  const handleClick = (e: React.MouseEvent, to: string) => {
+    e.preventDefault();
+    console.log(`Navigating to ${to}`);
+    window.location.href = to;
+  };
+
   return (
     <nav
       style={{
@@ -17,7 +27,8 @@ const HeaderNav = () => {
     >
       <FakeIcon />
       <ActiveLink
-        to="/"
+        to="/rta"
+        onClick={(e) => handleClick(e, "/contratti")}
         activeProps={{
           style: {
             padding: "0px 16px",
@@ -40,7 +51,7 @@ const HeaderNav = () => {
           },
         }}
       >
-        <h1>Index</h1>
+        <h1>RTA</h1>
       </ActiveLink>
       <ActiveLink
         to="/contratti"
